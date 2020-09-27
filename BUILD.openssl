@@ -1,0 +1,17 @@
+load("@rules_foreign_cc//tools/build_defs:configure.bzl", "configure_make")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+)
+
+configure_make(
+    name = "library",
+    lib_source = ":all",
+    configure_command = "config",
+    shared_libraries = [
+        "libssl.so",
+        "libcrypto.so",
+    ],
+    visibility = ["//visibility:public"],
+)

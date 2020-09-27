@@ -1,0 +1,23 @@
+load("@rules_foreign_cc//tools/build_defs:configure.bzl", "configure_make")
+
+filegroup(
+   name = "all",
+   srcs = glob(["**"]),
+)
+
+configure_make(
+    name = "library",
+    configure_options = [
+        "--with-ssl=$$EXT_BUILD_DEPS$$/library",
+        "--with-libexpat=$$EXT_BUILD_DEPS$$/library",
+    ],
+    lib_source = ":all",
+    shared_libraries = [
+        "libunbound.so",
+    ],
+    deps = [
+        "@openssl//:library",
+        "@expat//:library",
+    ],
+    visibility = ["//visibility:public"],
+)
