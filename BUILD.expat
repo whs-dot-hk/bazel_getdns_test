@@ -9,6 +9,9 @@ cmake_external(
     name = "library",
     lib_source = ":all",
     out_lib_dir = "lib64",
+    cache_entries = {
+        "EXPAT_BUILD_DOCS": "OFF",
+    },
     shared_libraries = [
         "libexpat.so",
     ],

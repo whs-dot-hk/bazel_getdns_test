@@ -19,6 +19,9 @@ cmake_external(
         "LIBYAML_LIBRARY": "$EXT_BUILD_DEPS/library/lib/libyaml.so",
         "BUILD_STUBBY": "ON",
         "USE_LIBIDN2": "OFF",
+        "BUILD_LIBEV": "OFF",
+        "BUILD_LIBEVENT2": "OFF",
+        "BUILD_LIBUV": "OFF",
     },
     lib_source = ":all",
     binaries = [

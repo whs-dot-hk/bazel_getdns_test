@@ -8,6 +8,9 @@ filegroup(
 configure_make(
     name = "library",
     lib_source = ":all",
+    configure_options = [
+        "--enable-subunit=no",
+    ],
     shared_libraries = [
         "libcheck.so",
     ],
