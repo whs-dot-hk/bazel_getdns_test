@@ -8,15 +8,7 @@ filegroup(
 cmake_external(
     name = "binaries",
     cache_entries = {
-        "OPENSSL_INCLUDE_DIR": "$EXT_BUILD_DEPS/library/include",
-        "OPENSSL_SSL_LIBRARY": "$EXT_BUILD_DEPS/library/lib/libssl.so",
-        "OPENSSL_CRYPTO_LIBRARY": "$EXT_BUILD_DEPS/library/lib/libcrypto.so",
-        "LIBUNBOUND_INCLUDE_DIR": "$EXT_BUILD_DEPS/library/include",
-        "LIBUNBOUND_LIBRARY": "$EXT_BUILD_DEPS/library/lib/libunbound.so",
-        "CHECK_INCLUDE_DIR": "$EXT_BUILD_DEPS/library/include",
-        "CHECK_LIBRARY": "$EXT_BUILD_DEPS/library/lib/libcheck.so",
-        "LIBYAML_INCLUDE_DIR": "$EXT_BUILD_DEPS/library/include",
-        "LIBYAML_LIBRARY": "$EXT_BUILD_DEPS/library/lib/libyaml.so",
+        "CMAKE_PREFIX_PATH": "$$EXT_BUILD_DEPS$$/library",
         "BUILD_STUBBY": "ON",
         "USE_LIBIDN2": "OFF",
         "BUILD_LIBEV": "OFF",
