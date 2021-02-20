@@ -8,7 +8,6 @@ filegroup(
 cmake_external(
     name = "binaries",
     cache_entries = {
-        "CMAKE_PREFIX_PATH": "$$EXT_BUILD_DEPS$$/library",
         "BUILD_STUBBY": "ON",
         "USE_LIBIDN2": "OFF",
         "BUILD_LIBEV": "OFF",
